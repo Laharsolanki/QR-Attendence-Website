@@ -1,0 +1,27 @@
+# Node / Vite / React
+node_modules/
+dist/
+dist-ssr/
+output/
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Editor files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+
+# Misc
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vite_cache
