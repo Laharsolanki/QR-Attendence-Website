@@ -6,6 +6,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import FacultyDashboard from './pages/FacultyDashboard';
 import StudentDashboard from './pages/StudentDashboard';
 import StudentProfile from './pages/StudentProfile';
+import StudentUpdateRequest from './pages/StudentUpdateRequest';
 import type { ReactNode } from 'react';
 
 interface RouteConfig {
@@ -55,6 +56,11 @@ const routes: RouteConfig[] = [
     name: 'Student Profile',
     path: '/student/profile',
     element: <StudentProfile />
+  },
+  {
+    name: 'Student Update Request',
+    path: '/student/contact-admin',
+    element: <StudentUpdateRequest />
   }
 ];
 

@@ -6,11 +6,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
-import { UserPlus, History, User, BookOpen } from "lucide-react";
+import { UserPlus, History, User, BookOpen, LogOut } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("registration");
+  const navigate = useNavigate();
 
   const studentForm = useForm({
     defaultValues: {
@@ -58,7 +60,7 @@ export default function AdminDashboard() {
           <span className="text-xl font-bold text-primary">Admin Panel</span>
         </div>
         
-        <nav className="space-y-2">
+        <nav className="space-y-2 flex-1">
           <Button 
             variant={activeTab === "registration" ? "default" : "ghost"} 
             className="w-full justify-start"
@@ -74,18 +76,36 @@ export default function AdminDashboard() {
             <History className="mr-2 h-4 w-4" /> View Logs
           </Button>
         </nav>
+
+        <Button
+          variant="outline"
+          className="w-full justify-start border-destructive text-destructive hover:bg-destructive/5"
+          onClick={() => navigate("/login/admin")}
+        >
+          <LogOut className="mr-2 h-4 w-4" /> Logout
+        </Button>
       </aside>
 
       <main className="flex-1 p-4 md:p-8 overflow-y-auto">
         {/* Mobile Header */}
         <div className="md:hidden flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold text-primary">Admin Panel</h1>
-          <Tabs value={activeTab} onValueChange={setActiveTab}>
-             <TabsList>
+          <div className="flex items-center gap-2">
+            <Tabs value={activeTab} onValueChange={setActiveTab}>
+              <TabsList>
                 <TabsTrigger value="registration">Reg</TabsTrigger>
                 <TabsTrigger value="logs">Logs</TabsTrigger>
-             </TabsList>
-          </Tabs>
+              </TabsList>
+            </Tabs>
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-destructive text-destructive hover:bg-destructive/5"
+              onClick={() => navigate("/login/admin")}
+            >
+              <LogOut className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
 
         {activeTab === "registration" ? (

@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { User, Book, Scan, AlertCircle, CheckCircle2, UserCircle } from "lucide-react";
+import { User, Book, Scan, AlertCircle, CheckCircle2, UserCircle, LogOut } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useNavigate } from "react-router-dom";
@@ -22,6 +22,15 @@ export default function StudentDashboard() {
   return (
     <div className="min-h-screen bg-background p-4 md:p-8">
       <div className="max-w-5xl mx-auto space-y-8">
+        <div className="flex items-center justify-end">
+          <Button
+            variant="outline"
+            className="border-destructive text-destructive hover:bg-destructive/5"
+            onClick={() => navigate("/login/student")}
+          >
+            <LogOut className="mr-2 h-4 w-4" /> Logout
+          </Button>
+        </div>
         {/* Profile Card */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card className="md:col-span-1 shadow-card border-none bg-primary text-white">
