@@ -26,7 +26,7 @@ export default function LandingPage() {
       description: "System administration and user registration.",
       icon: <ShieldCheck className="w-12 h-12 text-primary" />,
       path: "/login/admin",
-      buttonText: "Admin Enter"
+      buttonText: "Admin Login"
     }
   ];
 
