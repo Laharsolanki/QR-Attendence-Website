@@ -83,7 +83,7 @@ export default function FacultyGenerate() {
                 <Clock className="w-8 h-8 animate-pulse" />
                 <span>{timeLeft}s</span>
               </div>
-              <p className="text-sm text-muted-foreground max-w-md">
+              <p className="text-sm text-muted-foreground max-w-md text-center mx-auto">
                 Students can scan this code to mark their attendance. The session will automatically expire after the countdown.
               </p>
               <Button variant="destructive" className="w-full max-w-xs" onClick={() => setIsQRActive(false)}>
