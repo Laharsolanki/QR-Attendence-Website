@@ -59,7 +59,7 @@ export default function FacultyDashboard() {
         <Button 
           variant="outline" 
           className="w-full justify-start border-destructive text-destructive hover:bg-destructive/5"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/login/faculty")}
         >
           <LogOut className="mr-2 h-4 w-4" /> Logout
         </Button>
@@ -72,7 +72,7 @@ export default function FacultyDashboard() {
             <h2 className="text-lg font-bold text-primary">Faculty Portal</h2>
             <p className="text-xs text-muted-foreground">Dr. Sarah Johnson • FAC-2023-001</p>
           </div>
-          <Button variant="ghost" size="sm" onClick={() => navigate("/")}>
+          <Button variant="ghost" size="sm" onClick={() => navigate("/login/faculty")}>
             <LogOut className="h-4 w-4" />
           </Button>
         </div>

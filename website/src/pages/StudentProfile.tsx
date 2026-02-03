@@ -80,7 +80,11 @@ export default function StudentProfile() {
                 <h4 className="font-semibold text-lg mb-1">Need to update your information?</h4>
                 <p className="text-sm text-muted-foreground">Contact the administration office for profile updates.</p>
               </div>
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary/5">
+              <Button
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary/5"
+                onClick={() => navigate("/student/contact-admin")}
+              >
                 Contact Admin
               </Button>
             </div>
