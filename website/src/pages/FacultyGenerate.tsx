@@ -65,16 +65,18 @@ export default function FacultyGenerate() {
     <div className="space-y-8 animate-fade-in">
       {/* QR Generation Card */}
       <Card className="shadow-card border-none">
-        <CardHeader>
-          <CardTitle className="flex items-center text-2xl">
+        <CardHeader className="items-center text-center">
+          <CardTitle className="flex items-center justify-center text-2xl">
             <QrCode className="mr-3 text-primary" /> QR Code Control
           </CardTitle>
-          <CardDescription>Generate a temporary QR code for student check-in (60-second session).</CardDescription>
+          <CardDescription className="text-center">
+            Generate a temporary QR code for student check-in (60-second session).
+          </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col items-center justify-center p-6 space-y-6 min-h-[400px]">
           {isQRActive ? (
             <div className="text-center space-y-4 animate-fade-in w-full">
-              <div className="bg-white p-4 rounded-xl border-4 border-primary/20 inline-block">
+              <div className="bg-white p-4 rounded-xl border-4 border-primary/20 inline-block mx-auto">
                 <QRCodeDataUrl text={qrValue} width={250} />
               </div>
               <div className="flex items-center justify-center space-x-2 text-primary font-bold text-3xl">
@@ -90,7 +92,7 @@ export default function FacultyGenerate() {
             </div>
           ) : (
             <div className="text-center space-y-6">
-              <div className="w-64 h-64 bg-secondary/50 rounded-xl flex items-center justify-center border-2 border-dashed border-muted-foreground/20">
+              <div className="w-64 h-64 bg-secondary/50 rounded-xl flex items-center justify-center border-2 border-dashed border-muted-foreground/20 mx-auto">
                 <QrCode className="w-24 h-24 text-muted-foreground/30" />
               </div>
               <p className="text-muted-foreground max-w-md">
