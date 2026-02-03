@@ -56,6 +56,7 @@ export default function LoginFaculty() {
                 <FormField
                   control={form.control}
                   name="facultyNumber"
+                  rules={{ required: "Faculty number is required." }}
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Faculty Number</FormLabel>
@@ -69,6 +70,10 @@ export default function LoginFaculty() {
                 <FormField
                   control={form.control}
                   name="password"
+                  rules={{
+                    required: "Password is required.",
+                    minLength: { value: 6, message: "Password must be at least 6 characters." }
+                  }}
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Password</FormLabel>
